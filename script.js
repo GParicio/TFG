@@ -5,6 +5,7 @@ const searchInput = document.getElementById('search-input');
 const gamesList = document.getElementById('games-list');
 const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
+
 let currentPage = 1;
 
 searchForm.addEventListener('submit', function(event) {
@@ -35,7 +36,7 @@ searchForm.addEventListener('submit', function(event) {
         const gameElement = document.createElement('div');
         gameElement.classList.add('game-item');
         gameElement.innerHTML = `
-          <h3 class="game-title">${game.title}</h3>
+          <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
           <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
           <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
           <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
@@ -77,3 +78,4 @@ function updateButtonVisibility(pageCount) {
     nextButton.disabled = false;
   }
 }
+
