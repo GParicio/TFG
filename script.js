@@ -3,6 +3,7 @@ const apiKey = '79495262damsh0ccac0e59f88553p108ecbjsn61567da6ba49'; // Reemplaz
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const gamesList = document.getElementById('games-list');
+const loader = document.getElementById('loader');
 const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
 
@@ -12,6 +13,7 @@ searchForm.addEventListener('submit', function(event) {
   event.preventDefault();
   
   const searchTerm = searchInput.value.trim();
+  loader.style.display = 'inline';
 
   if (searchTerm === '') {
     return;
@@ -30,6 +32,7 @@ searchForm.addEventListener('submit', function(event) {
 
   axios.request(options)
     .then(response => {
+      
       gamesList.innerHTML = '';
 
       response.data.forEach(game => {
