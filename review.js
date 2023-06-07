@@ -2,7 +2,7 @@
 
 const gameId = new URLSearchParams(window.location.search).get('id');
 
-const apiKey = '79495262damsh0ccac0e59f88553p108ecbjsn61567da6ba49'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = 'b304040befmshba02f64c3ef3cafp189adejsn9eac6875b22b'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const reviewContainer = document.getElementById('review-container');
 

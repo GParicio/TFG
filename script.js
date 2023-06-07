@@ -1,4 +1,4 @@
-const apiKey = '79495262damsh0ccac0e59f88553p108ecbjsn61567da6ba49'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = 'b304040befmshba02f64c3ef3cafp189adejsn9eac6875b22b'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
@@ -38,6 +38,9 @@ searchForm.addEventListener('submit', function(event) {
       response.data.forEach(game => {
         const gameElement = document.createElement('div');
         gameElement.classList.add('game-item');
+        
+      const gameLink = document.createElement('a');
+      gameLink.href = `game.html?id=${game.appId}`;
         gameElement.innerHTML = `
           <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
           <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
@@ -45,6 +48,7 @@ searchForm.addEventListener('submit', function(event) {
           <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
           <a href="https://store.steampowered.com/app/${game.appId}/" target="_blank" class="game-link">Ver en Steam</a>
         `;
+        gameElement.appendChild(gameLink);
         gamesList.appendChild(gameElement);
       });
       prevButton.style.display = 'inline';

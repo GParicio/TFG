@@ -121,6 +121,25 @@
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Agrega una transición para suavizar el efecto */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-item h3,
+.game-item p,
+.game-item img,
+.game-item a {
+  text-align: center;
+}
+
+  .game-item:hover {
+    box-shadow: 0 0 1000px rgba(255, 0, 0, 0.3); /* Agrega el sombreado cuando se pasa el ratón por encima */
+    background-color: rgba(40, 73, 106, 0.5); /* Cambia el color de fondo gradualmente */
+
   }
 
   /* Menu bar */
