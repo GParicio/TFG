@@ -44,7 +44,9 @@ axios.request(options)
       <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
       <p id="game-description" class="game-description">${game.description}</p>
       <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
-      <a href="https://store.steampowered.com/app/${gameId}/" target="_blank" class="game-link">Ver en Steam</a>
+      <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+      <br>
+      <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
       <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
     `;
     

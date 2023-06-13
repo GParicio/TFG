@@ -46,7 +46,9 @@ searchForm.addEventListener('submit', function(event) {
           <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
           <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
           <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
-          <a href="https://store.steampowered.com/app/${game.appId}/" target="_blank" class="game-link">Ver en Steam</a>
+          <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+          <br>
+          <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
         `;
         gameElement.appendChild(gameLink);
         gamesList.appendChild(gameElement);
