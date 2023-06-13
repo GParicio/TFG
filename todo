@@ -4,3 +4,4 @@ Cambiar estilo en general, de cada elemento del game-item (titulo, etc) para que
 Cuando se haga click en el game-item, te lleve también a la página correspondiente
 Si el juego no ha salido aún (undefined) hacer que reseñas no se puedan ver O hacer que si hay 0 reseñas, lo ponga
 Añadir el sin precio al game.js
+añadir integración con epic
