@@ -2,7 +2,7 @@
 
 const gameId = new URLSearchParams(window.location.search).get('id');
 
-const apiKey = 'b304040befmshba02f64c3ef3cafp189adejsn9eac6875b22b'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = '5188ed1d9cmsh643ca2704426180p1c46a5jsn5b81d747b775'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const gameTitle = document.getElementById('game-title');
 const gameReleased = document.getElementById('game-released');

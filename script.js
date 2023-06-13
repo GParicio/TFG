@@ -1,4 +1,4 @@
-const apiKey = 'b304040befmshba02f64c3ef3cafp189adejsn9eac6875b22b'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = '5188ed1d9cmsh643ca2704426180p1c46a5jsn5b81d747b775'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
@@ -38,13 +38,21 @@ searchForm.addEventListener('submit', function(event) {
       response.data.forEach(game => {
         const gameElement = document.createElement('div');
         gameElement.classList.add('game-item');
+
+        // Verificar si el juego tiene un precio rebajado
+        const isDiscounted = game.price.includes('€') && game.price.split('€')[1].trim().length > 0;
+
+        // Obtener el precio a mostrar (precio original o precio rebajado)
+        const priceToShow = isDiscounted ? game.price.split('€')[1].trim().concat("€") : game.price;
         
+
       const gameLink = document.createElement('a');
       gameLink.href = `game.html?id=${game.appId}`;
-        gameElement.innerHTML = `
+        gameElement.innerHTML = ` 
           <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
           <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
-          <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
+          <p class="game-price"><span class="label">Price: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
+
           <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
           <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
           <br>

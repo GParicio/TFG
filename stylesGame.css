@@ -1,0 +1,31 @@
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.game-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.game-info {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.game-description {
+  font-size: 18px;
+  color: #acabb0;
+  text-align: justify;
+}
+
+.game-image {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}

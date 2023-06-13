@@ -1,6 +1,6 @@
 const gameId = new URLSearchParams(window.location.search).get('id');
 
-const apiKey = 'b304040befmshba02f64c3ef3cafp189adejsn9eac6875b22b'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = '5188ed1d9cmsh643ca2704426180p1c46a5jsn5b81d747b775'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const gameTotal = document.getElementById('games-total');
 const gameBlank = document.getElementById('games-blank');
@@ -37,21 +37,22 @@ axios.request(options)
     
     const game = response.data;
     const tagNames = game.tags.map(tag => tag.name);
-
+    
     gameTotal.innerHTML = `
-      <h3>${game.title}</h3>
+      <h3 class="game-title">${game.title}</h3>
       <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
       <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
       <p id="game-description" class="game-description">${game.description}</p>
       <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
-      <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+      <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
       <br>
-      <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+      <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+      <br>
+      <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 75px;" target="_self" class="game-link">Ver reseñas <img src="thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
       <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
     `;
     
-    gameBlank.textContent = `Released: ${game.released}`;
-
+    gameBlank.textContent = `Released: ${game.released}`;    
         
     //gameTitle.textContent = game.title;
     
