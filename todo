@@ -5,3 +5,4 @@ Cuando se haga click en el game-item, te lleve también a la página correspondi
 Si el juego no ha salido aún (undefined) hacer que reseñas no se puedan ver O hacer que si hay 0 reseñas, lo ponga
 Añadir el sin precio al game.js
 añadir integración con epic
+cambiar colores de las letras (a blanco)

@@ -1,5 +1,5 @@
 .container {
-    max-width: 500px;
+    max-width: 95%;
     margin: 0 auto;
     padding: 20px;
   }
@@ -11,8 +11,39 @@
   }
   
   .search-form {
+    top: 0;
+    max-width: 50%;
     display: flex;
+    /* Center it */
+    align-items: center;
+    margin: 0 auto; 
+
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 400px;
+    
     margin-bottom: 20px;
+    /* background-color: rgba(129, 129, 129, 0.25); */
+  }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    background-color: #666;
+    padding: 40px;
+    font-size: 25px;
+  }
+
+  .search-form{
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: #666;
+      padding: 40px;
+      font-size: 25px;
+    }
   }
   
   .search-input {
@@ -89,8 +120,20 @@
   
   /* Estilos para los botones de paginación */
   .pagination {
+    top: 0;
+    max-width: 50%;
+    display: flex;
+    
     margin-top: 20px;
     text-align: center;
+    /* Center it vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-top: 45%;
+    margin-left: 45%;
+
   }
   
   .pagination-button {
@@ -102,6 +145,8 @@
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
+    /* Center it*/
+    
   }
   
   .pagination-button:disabled {
@@ -143,6 +188,7 @@
   }
 
   /* Menu bar */
+  /* body { cursor: crosshair; } */
 
   @import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
 html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, pre {
@@ -153,7 +199,7 @@ html, body { min-height: 100%; }
 
 body {
 	background-color: #345;
-	background-image: linear-gradient(to bottom, #0009, transparent);
+	background-image: linear-gradient(to top, #345, rgb(11, 24, 38));
 	color: #eee;
 	font-family: 'Lato', sans-serif;
 	font-size: 62.5%;

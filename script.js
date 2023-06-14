@@ -67,8 +67,12 @@ searchForm.addEventListener('submit', function(event) {
 
       const gameLink = document.createElement('a');
       gameLink.href = `game.html?id=${game.appId}`;
+      // Agregar evento de clic al elemento del juego
+      gameElement.addEventListener('click', function() {
+        window.location.href = `game.html?id=${game.appId}`;
+      });
         gameElement.innerHTML = ` 
-          <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
+        <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
           <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
           <p class="game-price"><span class="label">Price: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
 
@@ -76,7 +80,7 @@ searchForm.addEventListener('submit', function(event) {
           <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
           <br>
           <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
-        `;
+          `;
         gameElement.appendChild(gameLink);
         gamesList.appendChild(gameElement);
       });

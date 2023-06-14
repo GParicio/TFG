@@ -7,27 +7,32 @@
   <title>Steam API</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="stylesFooter.css">
+  <link rel="stylesheet" href="stylesIcons.css">
   <link rel="stylesheet" href="styleLoading.css">
   <link rel="stylesheet" href="styleButton.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- import font awesome -->
+  <script src="https://kit.fontawesome.com/yourcode.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <!-- add bootsrap -->
 </head>
 
 <body>
+  
     <header id="header">
         <nav class="links" style="--items: 5;">
             <a href="index.html" title="Home"><img src="icons/home.svg" style="width:25px;height:25px"></a>
+            <a href="index.html" title="Search"><img src="icons/search.svg" style="width:25px;height:25px"></a>
             <a href="#" id="button" class="random-game-button" title="Random Page"><img src="icons/random.svg" style="width:25px;height:25px"></a>
-            <a href="#">Link 3</a>
             <a href="#">Link 4</a>
             <a href="index.html" title="FAQ"><img src="icons/help.svg" style="width:25px;height:25px"></a>
             <span class="line"></span>
         </nav>
       </header>
-
+      
   <div class="container">
     <h1 class="title">Steam API</h1>
-
+    <br>
     <form id="search-form" class="search-form">
         <input type="text" id="search-input" placeholder="Busca un juego" class="search-input">
         <!-- <button type="submit" class="search-button">Search</button> -->
@@ -35,13 +40,33 @@
           <button class="btn-hover color-9">Buscar</button>
         </div>
     </div>
+    <script>
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+          $('.search-form').fadeOut();
+        } else {
+          $('.search-form').fadeIn();
+        }
+      });
+    </script>
+    <br>
+    <br>
           
     </form>
 
     <div class="pagination">
         <button id="prev-button" class="pagination-button" style="display: none" disabled>Previous</button>
         <button id="next-button" class="pagination-button" style="display: none" disabled>Next</button>
-      </div>
+    </div>
+    <script>
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+          $('.pagination').fadeOut();
+        } else {
+          $('.pagination').fadeIn();
+        }
+      });
+    </script>
 
     <div id="games-list" class="games-list">
       <div id="loader" class="loader loader--style6" title="5" style="display: none">
@@ -89,6 +114,8 @@
 
 
 <footer class="site-footer">
+  <!-- add boostrap latests version -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-6">
@@ -134,11 +161,11 @@
           <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
           <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
           <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li></li> 
         </ul>
       </div>
     </div>
   </div>
 </footer>
-
 </html>
