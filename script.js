@@ -30,6 +30,25 @@ searchForm.addEventListener('submit', function(event) {
     }
   };
 
+  jQuery(document).ready(function($) {
+    // Obtener las appIds del archivo appIds.txt
+    $.get('appIds.txt', function(data) {
+      var appIds = data.split(',').map(function(appId) {
+        return appId.trim();
+      });
+  
+      // Manejar el evento click del botón
+      $('#randomGameButton').click(function() {
+        // Obtener una appId aleatoria
+        var randomAppId = appIds[Math.floor(Math.random() * appIds.length)];
+  
+        // Redirigir a la página de game.html con la appId como parámetro en la URL
+        window.location.href = 'game.html?appId=' + randomAppId;
+      });
+    });
+  });
+  
+
   axios.request(options)
     .then(response => {
       

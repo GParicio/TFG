@@ -1,5 +1,5 @@
 /* Slider styles */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);	
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
 #slider {
   position: relative;
@@ -22,14 +22,30 @@
   float: left;
   margin: 0;
   padding: 0;
-  width: 500px;
+  width: 575px;
   height: 300px;
-  background: #ccc;
   text-align: center;
   line-height: 300px;
 }
 
-a.control_prev, a.control_next {
+.review-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 10px;
+  color: #fff;
+}
+
+.review-item.voted-up {
+  background-color: blue;
+}
+
+.review-item.voted-down {
+  background-color: red;
+}
+
+a.control_prev,
+a.control_next {
   position: absolute;
   top: 40%;
   z-index: 999;
@@ -46,7 +62,8 @@ a.control_prev, a.control_next {
   cursor: pointer;
 }
 
-a.control_prev:hover, a.control_next:hover {
+a.control_prev:hover,
+a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
 }

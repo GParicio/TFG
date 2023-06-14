@@ -51,6 +51,7 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <link rel="stylesheet" href="stylesSlider.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="gameSlider.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-jSNXkH0K4LnGOvhv/+MmMhgj72IM8Pgml6i2u2T8hGLqWabmY3E0bsziNoLzkrPpX22dE1WpKpxdby9fM8f6BQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <div id="slider">
         <a href="javascript:void(0)" class="control_next">>></a>
         <a href="javascript:void(0)" class="control_prev"><</a>
@@ -60,17 +61,25 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
             <!-- Aquí se mostrará la reseña del primer juego -->
           </div>
           </li>
-          <li style="background: #aaa;">
+          <li>
           <div class="slider-item-content">
             <!-- Aquí se mostrará la reseña del segundo juego -->
           </div>
           </li>
-          <li>SLIDE 3</li>
-          <li style="background: #aaa;">SLIDE 4</li>
+          <li>
+          <div class="slider-item-content">
+            <!-- Aquí se mostrará la reseña del tercer juego -->
+          </div>
+          </li>
+          <li>
+          <div class="slider-item-content">
+            <!-- Aquí se mostrará la reseña del cuarto juego -->
+          </div>
+          </li>
         </ul>  
       </div>
 
-      <div class="slider_option">
+      <div class="slider_option" style="visibility: hidden">
         <input type="checkbox" id="checkbox">
         <label for="checkbox">Autoplay Slider</label>
       </div>
@@ -83,29 +92,49 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
       <h3 class="game-title">No hay reseñas</h3>
       `;
   } else {
-    reviews.forEach(review => {
+    reviews.forEach((review, index) => {
       const reviewElement = document.createElement('div');
-      reviewElement.classList.add('review-item');
-      reviewElement.innerHTML = `
-        <div class="review-item-header">
-          <img src="${review.author.avatar}" alt="${review.author.name}" class="review-item-avatar">
-          <div class="review-item-info">
-            <p class="review-item-name">${review.author}</p>
-            <p class="review-item-date">${review.date}</p>
-          </div>
-        </div>
-        <p class="review-item-content">${review.content}</p>
-        <div class="review-item-footer">
-          <p class="review-item-votes">Votos: ${review.votes}</p>
-          <p class="review-item-percentage">Porcentaje: ${review.percentage}%</p>
-        </div>
-        <h4>Author: ${review.author}</h4>
-        <p>Review: ${review.review}</p>
-        <p>Rating: ${review.rating}</p>
-        <p>Timestamp: ${review.timestamp}</p>
-        <hr>
-        `;
-      reviewContainer.appendChild(reviewElement);
+    reviewElement.classList.add('review-item');
+    
+    let truncatedReview = review.review;
+    if (truncatedReview.length > 80) {
+      const lastSpaceIndex = truncatedReview.lastIndexOf(' ', 80);
+      truncatedReview = truncatedReview.substring(0, lastSpaceIndex) + '...';
+    }
+
+    reviewElement.innerHTML = `
+    ${review.voted_up ? '<img src="thumbsUpIcon.png" alt="Thumbs Up" height="15" width="15">' : '<img src="thumbsDownIcon.png" alt="Thumbs Down" height="15" width="15">'}
+    Review: ${truncatedReview}
+    `;
+  const reviewTextElement = document.createElement('div');
+  reviewTextElement.classList.add('review-property');
+  reviewTextElement.textContent = `Review: ${review.review}`;
+  reviewElement.appendChild(reviewTextElement);
+
+  const ratingElement = document.createElement('div');
+  ratingElement.classList.add('review-property');
+  ratingElement.textContent = `Rating: ${review.rating}`;
+  reviewElement.appendChild(ratingElement);
+  // Crear un elemento de icono según el valor de review.voted_up
+  const thumbIcon = document.createElement('i');
+  thumbIcon.classList.add('fas', review.voted_up ? 'fa-thumbs-up' : 'fa-thumbs-down');
+
+  // Agregar el icono al inicio del elemento de la reseña
+  reviewElement.insertBefore(thumbIcon, reviewElement.firstChild);
+
+  if (review.voted_up) {
+    reviewElement.style.backgroundImage = 'linear-gradient(to bottom, #4e9cff, #0047b3)';
+    reviewElement.style.color = 'white';
+    
+  } else {
+    reviewElement.style.backgroundImage = 'linear-gradient(to bottom, #ff4e4e, #b30000)';
+    reviewElement.style.color = 'white';
+  }
+    
+      // Obtener la pestaña correspondiente en el slider
+      const sliderItemContent = document.querySelectorAll('.slider-item-content')[index];
+      // Agregar la reseña al contenido de la pestaña
+      sliderItemContent.appendChild(reviewElement);
     });
   }
 })).catch(errors => {
