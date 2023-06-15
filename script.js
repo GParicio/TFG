@@ -1,4 +1,4 @@
-const apiKey = 'cb91fa6805msh47ea971cccb96e6p10ce2ajsn648f7d6605b9'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = '3eb72223c7mshfa7f1a27dddf498p1bbad6jsn3006f571fb9f'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
@@ -57,6 +57,24 @@ searchForm.addEventListener('submit', function(event) {
       response.data.forEach(game => {
         const gameElement = document.createElement('div');
         gameElement.classList.add('game-item');
+        gameElement.style.backgroundImage = `url('https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appId}/header.jpg')`;
+        gameElement.style.backgroundSize = 'cover';
+        gameElement.style.backgroundPosition = 'center';
+        gameElement.style.backgroundRepeat = 'no-repeat';
+        gameElement.style.opacity = '0.85';
+        const opacity = 0.85; // Cambia el valor de opacidad según tus necesidades
+
+        // Agregar evento de ratón para iluminar el div
+  gameElement.addEventListener('mouseover', function() {
+    gameElement.style.opacity = 1;
+    //transition opacity
+    gameElement.style.transition = "opacity 0.5s ease-in-out";
+  });
+
+  // Agregar evento de ratón para volver a la opacidad original
+  gameElement.addEventListener('mouseout', function() {
+    gameElement.style.opacity = opacity;
+  });
 
         // Verificar si el juego tiene un precio rebajado
         const isDiscounted = game.price.includes('€') && game.price.split('€')[1].trim().length > 0;
@@ -71,22 +89,24 @@ searchForm.addEventListener('submit', function(event) {
       gameElement.addEventListener('click', function() {
         window.location.href = `game.html?id=${game.appId}`;
       });
-        gameElement.innerHTML = ` 
-        <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
-          <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
-          <p class="game-price"><span class="label">Price: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
-
-          <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
-          <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
-          <br>
-          <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
-          `;
+      gameElement.innerHTML = ` 
+      <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
+        <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
+        <p class="game-price"><span class="label">Price: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
+        <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+        <br>
+        <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+    `;
+    
         gameElement.appendChild(gameLink);
         gamesList.appendChild(gameElement);
       });
       prevButton.style.display = 'inline';
       nextButton.style.display = 'inline';
       updateButtonVisibility(response.pageCount);
+      //Mostrar por consola el número de juegos que hay
+      console.log(response.pageCount);
+
     })
     .catch(error => {
       console.error(error);

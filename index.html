@@ -58,15 +58,19 @@
         <button id="prev-button" class="pagination-button" style="display: none" disabled>Previous</button>
         <button id="next-button" class="pagination-button" style="display: none" disabled>Next</button>
     </div>
-    <script>
+    <!-- <script>
       $(window).scroll(function() {
-        if ($(this).scrollTop() > 500) {
-          $('.pagination').fadeOut();
-        } else {
-          $('.pagination').fadeIn();
-        }
-      });
-    </script>
+  var windowHeight = $(window).height();
+  var documentHeight = $(document).height();
+  var scrollPosition = $(this).scrollTop();
+
+  if (scrollPosition > (documentHeight - windowHeight) / 2 || scrollPosition === 0) {
+    $('.pagination').fadeIn();
+  } else {
+    $('.pagination').fadeOut();
+  }
+});
+    </script> -->
 
     <div id="games-list" class="games-list">
       <div id="loader" class="loader loader--style6" title="5" style="display: none">

@@ -133,7 +133,10 @@
     position: fixed;
     margin-top: 45%;
     margin-left: 45%;
-
+    /* ponerla por encima */
+    z-index: 1;
+    
+    
   }
   
   .pagination-button {
@@ -145,8 +148,10 @@
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
-    /* Center it*/
-    
+    /* Change to a darker color when hover*/
+    transition: background-color 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Agrega una transición para suavizar el efecto */
+
   }
   
   .pagination-button:disabled {
@@ -179,6 +184,7 @@
 .game-item img,
 .game-item a {
   text-align: center;
+  color: white;
 }
 
   .game-item:hover {

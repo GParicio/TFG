@@ -1,6 +1,6 @@
 const gameId = new URLSearchParams(window.location.search).get('id');
 
-const apiKey = 'cb91fa6805msh47ea971cccb96e6p10ce2ajsn648f7d6605b9'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = '3eb72223c7mshfa7f1a27dddf498p1bbad6jsn3006f571fb9f'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const gameTotal = document.getElementById('games-total');
 const gameBlank = document.getElementById('games-blank');
@@ -41,7 +41,7 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
     <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
     <p id="game-description" class="game-description">${game.description}</p>
-    <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/${gameId}/header.jpg" alt="${game.title}" style="display:flex;margin-top:10px" class="game-image">
     <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     <br>
     <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
