@@ -397,3 +397,32 @@ a.control_next {
   font-size: 18px;
 } */
 
+/* Estilo personalizado para la tabla */
+#games-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+#games-table th,
+#games-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+#games-table th {
+  background-color: #2b2f50;
+  font-weight: bold;
+}
+
+#games-table tbody tr:hover {
+  background-color: #3c4066;
+}
+
+#games-table img {
+  max-width: 40%;
+  max-height: 40%;
+}
+
+/* Añade estilos adicionales según tus preferencias */

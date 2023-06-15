@@ -117,7 +117,6 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
   reviewElement.appendChild(ratingElement);
   // Crear un elemento de icono según el valor de review.voted_up
   const thumbIcon = document.createElement('i');
-  thumbIcon.classList.add('fas', review.voted_up ? 'fa-thumbs-up' : 'fa-thumbs-down');
 
   // Agregar el icono al inicio del elemento de la reseña
   reviewElement.insertBefore(thumbIcon, reviewElement.firstChild);
