@@ -42,11 +42,11 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
     <p id="game-description" class="game-description">${game.description}</p>
     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/${gameId}/header.jpg" alt="${game.title}" style="display:flex;margin-top:10px" class="game-image">
-    <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+    <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="icons/chromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     <br>
-    <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+    <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="icons/SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     <br>
-    <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 75px;" target="_self" class="game-link">Ver reseñas <img src="thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+    <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 75px;" target="_self" class="game-link">Ver reseñas <img src="icons/thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
     <link rel="stylesheet" href="stylesSlider.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -103,7 +103,7 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     }
 
     reviewElement.innerHTML = `
-    ${review.voted_up ? '<img src="thumbsUpIcon.png" alt="Thumbs Up" height="15" width="15">' : '<img src="thumbsDownIcon.png" alt="Thumbs Down" height="15" width="15">'}
+    ${review.voted_up ? '<img src="icons/thumbsUpIcon.png" alt="Thumbs Up" height="15" width="15">' : '<img src="icons/thumbsDownIcon.png" alt="Thumbs Down" height="15" width="15">'}
     Review: ${truncatedReview}
     `;
   const reviewTextElement = document.createElement('div');
@@ -155,11 +155,11 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
 //       <p class="game-info"><span class="label">Price:</span> ${game.price}</p>
 //       <p id="game-description" class="game-description">${game.description}</p>
 //       <img src="${game.imgUrl}" alt="${game.title}" class="game-image">
-//       <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+//       <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 125px;" target="_blank" class="game-link">Abrir en el navegador <img src="icons/chromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
 //       <br>
-//       <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+//       <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 145px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="icons/SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
 //       <br>
-//       <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 75px;" target="_self" class="game-link">Ver reseñas <img src="thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+//       <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 75px;" target="_self" class="game-link">Ver reseñas <img src="icons/thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
 //       <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
 //     `;
     
