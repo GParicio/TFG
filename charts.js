@@ -16,7 +16,7 @@ function loadGames() {
     // Generar las filas de la tabla con los datos de los juegos
     const rowsHTML = games.map(game => `
     
-      <tr>
+      <tr style="cursor:pointer">
         <td>${game.rank}</td>
         <td id="${game.appid}"><img src="https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/header.jpg" title="${game.appid}" width="40%" height="40%"></td>
         <td>${game.concurrent_in_game}</td>
