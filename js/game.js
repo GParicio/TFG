@@ -48,7 +48,7 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <br>
     <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 75px;" target="_self" class="game-link">Ver reseñas <img src="icons/thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
-    <link rel="stylesheet" href="css/stylesSlider.css">
+    <link rel="stylesheet" href="stylesSlider.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="src="js/gameSlider.js""></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-jSNXkH0K4LnGOvhv/+MmMhgj72IM8Pgml6i2u2T8hGLqWabmY3E0bsziNoLzkrPpX22dE1WpKpxdby9fM8f6BQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
