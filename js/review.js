@@ -1,4 +1,4 @@
-// review.js
+// js/review.js
 
 const gameId = new URLSearchParams(window.location.search).get('id');
 
