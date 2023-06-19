@@ -46,10 +46,10 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     </div>
     <div class="col">
     <p id="game-description" class="game-description">${game.description}</p>
-    <p class="game-info"><span class="label">Price: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
-    <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
-    <p class="game-info"><span class="label">Developer:</span> <a href="${game.developer.link}" target="_blank">${game.developer.name}</a></p>
-    <p class="game-info"><span class="label">Publisher:</span> <a href="${game.publisher.link}" target="_blank">${game.publisher.name}</a></p>
+    <p class="game-info"><span class="label">Precio: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
+    <p class="game-info"><span class="label">Fecha de lanzamiento:</span> ${game.released}</p>
+    <p class="game-info"><span class="label">Desarrolladora:</span> <a href="${game.developer.link}" target="_blank">${game.developer.name}</a></p>
+    <p class="game-info"><span class="label">Editor:</span> <a href="${game.publisher.link}" target="_blank">${game.publisher.name}</a></p>
     <p class="game-info"><a class="label" href="https://steamcommunity.com/app/${gameId}/?curator_clanid=4777282" target="_blank">Hub</a></p>
     <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
 
