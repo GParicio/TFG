@@ -35,6 +35,11 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
   const game = responses[0].data;
   const tagNames = game.tags.map(tag => tag.name);
   const reviews = responses[1].data.reviews;
+    // Verificar si el juego tiene un precio rebajado
+    const isDiscounted = game.price.includes('€') && game.price.split('€')[1].trim().length > 0;
+
+    // Obtener el precio a mostrar (precio original o precio rebajado)
+    const priceToShow = isDiscounted ? game.price.split('€')[1].trim().concat("€") : game.price;
 
   gameTotal.innerHTML = `
     <br>
@@ -46,8 +51,10 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     </div>
     <div class="col">
     <p id="game-description" class="game-description">${game.description}</p>
-    <p class="game-info"><span class="label">Precio: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
-    <p class="game-info"><span class="label">Fecha de lanzamiento:</span> ${game.released}</p>
+    <p class="game-info">
+    <span class="label">Precio: </span>
+    ${game.price && game.price.trim().length > 0 ? `<a style="color:green"> ${priceToShow}</a>` : 'Sin precio'}
+  </p>    <p class="game-info"><span class="label">Fecha de lanzamiento:</span> ${game.released}</p> 
     <p class="game-info"><span class="label">Desarrolladora:</span> <a href="${game.developer.link}" target="_blank">${game.developer.name}</a></p>
     <p class="game-info"><span class="label">Editor:</span> <a href="${game.publisher.link}" target="_blank">${game.publisher.name}</a></p>
     <p class="game-info"><a class="label" href="https://steamcommunity.com/app/${gameId}/?curator_clanid=4777282" target="_blank">Hub</a></p>
