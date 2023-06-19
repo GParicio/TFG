@@ -109,6 +109,11 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
         <label for="checkbox">Autoplay Slider</label>
       </div>
     `;
+    const slider = document.getElementById('slider');
+
+if (reviews.length === 0) {
+  slider.innerHTML = '<h3 class="game-info" style="display:flex; align-items: center;justify-content: center;">No hay reseñas disponibles</h3>';
+}
     const script = document.createElement('script');
     script.src = 'js/gameSlider.js';
     document.body.appendChild(script);

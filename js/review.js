@@ -21,18 +21,25 @@ axios.request(options)
   .then(response => {
     const reviews = response.data.reviews;
 
-    reviews.forEach(review => {
-      const reviewElement = document.createElement('div');
-      reviewElement.classList.add('review-item');
-      reviewElement.innerHTML = `
-        <h4>Author: ${review.author}</h4>
-        <p>Review: ${review.review}</p>
-        <p>Rating: ${review.rating}</p>
-        <p>Timestamp: ${review.timestamp}</p>
-        <hr>
-      `;
-      reviewContainer.appendChild(reviewElement);
-    });
+    if (reviews.length > 0) {
+      reviews.forEach(review => {
+        const reviewElement = document.createElement('div');
+        reviewElement.classList.add('review-item');
+        reviewElement.innerHTML = `
+          <h4>Autor: ${review.author}</h4>
+          <p>Reseña: ${review.review}</p>
+          <p>Puntuación: ${review.rating}</p>
+          <p>Timestamp: ${review.timestamp}</p>
+          <hr>
+        `;
+        reviewContainer.appendChild(reviewElement);
+      });
+    } else {
+      const noReviewsElement = document.createElement('p');
+      noReviewsElement.classList.add('no-reviews');
+      noReviewsElement.textContent = 'No hay reseñas disponibles';
+      reviewContainer.appendChild(noReviewsElement);
+    }
   })
   .catch(error => {
     console.error(error);
