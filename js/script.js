@@ -92,15 +92,12 @@ searchForm.addEventListener('submit', function(event) {
         window.location.href = `game.html?id=${game.appId}`;
       });
       gameElement.innerHTML = ` 
-      <h3 id="bordecito"><a href="game.html?id=${game.appId}">${game.title}</a></h3>
-        <p class="game-info" id="bordecito"><span class="label">Fecha de lanzamiento:</span> ${game.released}</p>
-        <p class="game-price" id="bordecito">
-        <span class="label">Precio: </span>
-        ${game.price && game.price.trim().length > 0 ? `<del style="color:grey">${originalPrice}</del> <a style="color:green"> ${priceToShow}</a>` : 'Sin precio'}
-      </p>        <br>
-        <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="icons/chromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+      <h3><a href="game.html?id=${game.appId}">${game.title}</a></h3>
+        <p class="game-info"><span class="label">Released:</span> ${game.released}</p>
+        <p class="game-price"><span class="label">Price: </span>${game.price && game.price.trim().length > 0 ? priceToShow : 'Sin precio'}</p>
+        <a href="https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el navegador <img src="ChromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
         <br>
-        <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="icons/SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+        <a href="steam://openurl/https://store.steampowered.com/app/${game.appId}/" style="display: flex; align-items: center;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     `;
     
         gameElement.appendChild(gameLink);
