@@ -36,7 +36,7 @@ git clone https://github.com/GParicio/TFG
 
 3. Abre el archivo index.html en tu navegador web.
 
-##Imágenes
+## Imágenes
 
 ![This is an alt text.](icons/screenshots/1.png "1")
 ![This is an alt text.](/icons/screenshots/2.png "2")
