@@ -1,0 +1,11 @@
+/*div filtered by news id*/
+
+.news{
+    width: 200px;
+    height: 300px;
+    background-color: gray;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

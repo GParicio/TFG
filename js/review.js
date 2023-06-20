@@ -46,6 +46,7 @@ axios.request(options)
       const noReviewsElement = document.createElement('p');
       noReviewsElement.classList.add('no-reviews');
       noReviewsElement.textContent = 'No hay reseñas disponibles';
+      noReviewsElement.style.color = 'white';
       reviewContainer.appendChild(noReviewsElement);
     }
   })

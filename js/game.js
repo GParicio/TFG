@@ -71,9 +71,13 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <br>
     <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 240px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="icons/SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     </div>
-    <div class="col">
+    <div class="col" style="left:40px">
     <br>
     <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 125px;" target="_self" class="game-link">Ver reseñas <img src="icons/thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
+    </div>
+    <div class="col">
+    <br>
+    <a href="news.html?id=${gameId}" style="display: flex; align-items: center; width: 125px;" target="_self" class="game-link">Ver noticias <img src="icons/bell.jpg" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     </div>
     </div>
     <link rel="stylesheet" href="css/stylesSlider.css">

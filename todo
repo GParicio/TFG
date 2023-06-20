@@ -23,3 +23,8 @@ poner barra en reviews y hacer faq
 traducirlo todo
 
 arreglar quick link random abajo del todo
+
+
+notas: para saber la otra forma de pasar datos de js a html, mirar gameCopyBackup.js
+
+(ya está añadido) Añadir para que funcione charts.html (CORS extension): https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
