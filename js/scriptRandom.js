@@ -6,4 +6,3 @@
   }
   
   document.getElementById('button').addEventListener('click', loadAppIds);
-  document.getElementById('button2').addEventListener('click', loadAppIds);
