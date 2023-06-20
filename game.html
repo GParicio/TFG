@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Details</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/stylesFooter.css">
   <link rel="stylesheet" href="css/styleLoading.css">
   <link rel="stylesheet" href="css/stylesGame.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -74,13 +75,75 @@
     <!-- Otros scripts necesarios -->
     <script src="js/gameSlider.js"></script>
     <div id="review-container"></div>
-
+    <footer class="site-footer">
+      <!-- add boostrap latests version -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>Sobre nosotros</h6>
+    <p class="text-justify">Este proyecto tiene como propósito
+              mostrar los juegos más populares de la plataforma Steam, 
+              los más jugados actualizados en tiempo real, 
+              así como también mostrar los juegos que se encuentran en oferta.
+              Además, se puede buscar un juego en específico y ver su información.
+    
+            </p>     </div>
+    
+          <div class="col-xs-6 col-md-3">
+            <h6>Categorias relacionadas</h6>
+            <ul class="footer-links">
+              <li><a href="https://store.steampowered.com/">Steam</a></li>
+              <li><a href="https://steamdb.info/">SteamDB</a></li>
+              <li><a href="https://rapidapi.com/psimavel/api/steam2">RapidAPI</a></li>
+              <li><a href="https://steamapi.xpaw.me/#">Steam Web Api</a></li>
+              <li><a href="https://github.com/GParicio">Github</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="index.html">Search (index)</a></li>
+              <li><a href="charts.html">Charts</a></li>
+              <li><a href="#" id="button2" class="random-game-button">Random game</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <script src="js/scriptRandom.js"></script>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+         <a href="https://github.com/GParicio/">Guillermo Paricio</a>.
+            </p>
+          </div>
+    
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <!-- font awesome -->
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <li><a class="facebook" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="youtube" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/guillermo-paricio-izuzquiza-bb1776228/"><i class="fa fa-linkedin"></i></a></li>
+              <li></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/game.js"></script>
   <script src="js/scriptRandom.js"></script>
   <script src="js/review.js"></script>
+  
 </body>
 
 </html>
