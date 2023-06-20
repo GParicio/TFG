@@ -4,7 +4,7 @@ const options = {
   method: 'GET',
   url: 'https://steam2.p.rapidapi.com/search/Counter/page/1',
   headers: {
-    'X-RapidAPI-Key': '3eb72223c7mshfa7f1a27dddf498p1bbad6jsn3006f571fb9f',
+    'X-RapidAPI-Key': 'baac56be76msh86448bb5e708a67p18c330jsn3e85f5884e52',
     'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
   }
 };

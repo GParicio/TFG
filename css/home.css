@@ -1,0 +1,15 @@
+.game-square {
+    width: 200px;
+    height: 300px;
+    background-color: gray;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .games-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  

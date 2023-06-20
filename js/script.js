@@ -1,4 +1,4 @@
-const apiKey = '3eb72223c7mshfa7f1a27dddf498p1bbad6jsn3006f571fb9f'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = 'baac56be76msh86448bb5e708a67p18c330jsn3e85f5884e52'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');

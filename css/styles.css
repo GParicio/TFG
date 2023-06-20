@@ -413,7 +413,7 @@ a.control_next {
 #bordecito {
   display: table; /* keep the background color wrapped tight */
   margin: 0px auto 0px auto; /* keep the table centered */
-  padding:1px;background-color:rgb(0, 0, 0);color:#ffffff;
+  padding:1px;background-color:rgb(0, 0, 0, 0.75);color:#ffffff;
 }
 #games-table th {
   background-color: #2b2f50;

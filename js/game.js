@@ -1,6 +1,6 @@
 const gameId = new URLSearchParams(window.location.search).get('id');
 
-const apiKey = '3eb72223c7mshfa7f1a27dddf498p1bbad6jsn3006f571fb9f'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = 'baac56be76msh86448bb5e708a67p18c330jsn3e85f5884e52'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const gameTotal = document.getElementById('games-total');
 const gameBlank = document.getElementById('games-blank');
@@ -47,7 +47,7 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <h3 class="game-title" style="color: white;  font-weight: bold;">${game.title}</h3>
     <div class="row">
     <div class="col">
-    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/${gameId}/capsule_616x353.jpg" alt="${game.title}" style="display:flex;margin-top:10px">
+    <img onerror="this.onerror=null;this.src='icons/imagenotfound.jpg';" src="https://cdn.cloudflare.steamstatic.com/steam/apps/${gameId}/capsule_616x353.jpg" alt="${game.title}" style="display:flex;margin-top:10px">
     </div>
     <div class="col">
     <p id="game-description" class="game-description">${game.description}</p>
@@ -58,18 +58,21 @@ axios.all([axios.request(options), axios.request(reviewOptions)]).then(axios.spr
     <p class="game-info"><span class="label">Desarrolladora:</span> <a href="${game.developer.link}" target="_blank">${game.developer.name}</a></p>
     <p class="game-info"><span class="label">Editor:</span> <a href="${game.publisher.link}" target="_blank">${game.publisher.name}</a></p>
     <p class="game-info"><a class="label" href="https://steamcommunity.com/app/${gameId}/?curator_clanid=4777282" target="_blank">Hub</a></p>
-    <p id="game-description" class="game-description">${tagNames.join(', ')}</p>
+    <p id="game-description" class="game-info">${tagNames.join(', ')}</p>
 
     </div>
     </div>
     <div class="row">
     <div class="col">
+    <br>
     <a href="https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 200px;" target="_blank" class="game-link">Abrir en el navegador <img src="icons/chromeIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     </div>
     <div class="col">
+    <br>
     <a href="steam://openurl/https://store.steampowered.com/app/${gameId}/" style="display: flex; align-items: center; width: 240px;" target="_blank" class="game-link">Abrir en el cliente de Steam <img src="icons/SteamIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     </div>
     <div class="col">
+    <br>
     <a href="review.html?id=${gameId}" style="display: flex; align-items: center; width: 125px;" target="_self" class="game-link">Ver reseñas <img src="icons/thumbsUpIcon.png" alt="Girl in a jacket" width="15" height="15" style="margin-left: 5px;"></a>
     </div>
     </div>
