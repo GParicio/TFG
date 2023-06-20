@@ -1,6 +1,6 @@
 const gameId = new URLSearchParams(window.location.search).get('id');
 
-const apiKey = 'baac56be76msh86448bb5e708a67p18c330jsn3e85f5884e52'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
+const apiKey = 'b304040befmshba02f64c3ef3cafp189adejsn9eac6875b22b'; // Reemplaza "YOUR_API_KEY" con tu propia clave API
 
 const gameTotal = document.getElementById('games-total');
 const gameBlank = document.getElementById('games-blank');
