@@ -9,6 +9,20 @@
     font-size: 28px;
     margin-bottom: 20px;
   }
+  .review-item {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .review-item.positive {
+    background-color: rgb(73,151,251);
+    color: white;
+  }
+  
+  .review-item.negative {
+    background-color: rgb(250,73,73);
+    color: white;
+  }
   
   .search-form {
     top: 0;

@@ -20,18 +20,23 @@ const options = {
 axios.request(options)
   .then(response => {
     const reviews = response.data.reviews;
-
+    reviewContainer.innerHTML = '';
+    
     if (reviews.length > 0) {
       reviews.forEach(review => {
         const reviewElement = document.createElement('div');
         reviewElement.classList.add('review-item');
+        if (review.voted_up) {
+          reviewElement.classList.add('positive');
+        } else {
+          reviewElement.classList.add('negative');
+        }
         reviewElement.innerHTML = `
-        ${review.voted_up ? '<img src="icons/thumbsUpIcon.png" alt="Thumbs Up" height="15" width="15">' : '<img src="icons/thumbsDownIcon.png" alt="Thumbs Down" height="15" width="15">'}
+        ${review.voted_up ? '<img src="icons/thumbsUpIcon.png" alt="Thumbs Up" height="30" width="30">' : '<img src="icons/thumbsDownIcon.png" alt="Thumbs Down" height="15" width="15">'}
           <br>
           <p>Reseña: ${review.review}</p>
           ${review.votes_up ? `<br><p>A ${review.votes_up} usuarios les pareció interesante</p>` : ''}
           ${review.votes_funny ? `<br><p>A ${review.votes_funny} usuarios les pareció divertido</p>` : ''}
-          <hr>
         `;
         reviewContainer.appendChild(reviewElement);
       });

@@ -1,21 +1,87 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reseñas del juego</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styleLoading.css">
+  <link rel="stylesheet" href="css/stylesGame.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- import font awesome -->
+  <script src="https://kit.fontawesome.com/yourcode.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="icon" href="icons/icone-steam.png">
+
+
 </head>
+
 <body>
-  <br>
-  <h1>Reseñas del juego</h1>
-  <div id="review-container"></div>
+  <header id="header" style="z-index: 1;">
+    <nav class="links" style="--items: 5;">
+        <a href="home.html" title="Home"><img src="icons/home.svg" style="width:25px;height:25px"></a>
+        <a href="index.html" title="Search"><img src="icons/search.svg" style="width:25px;height:25px"></a>
+        <a href="charts.html" title="Charts"><img src="icons/charts.svg" style="width:25px;height:25px"></a>
+        <a href="#" id="button" class="random-game-button" title="Random Page"><img src="icons/random.svg" style="width:25px;height:25px"></a>
+        <a href="faq.html" title="FAQ"><img src="icons/help.svg" style="width:25px;height:25px"></a>
+        <span class="line"></span>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    <h1 class="title">Game Details</h1>
+    <link rel="stylesheet" href="css/stylesSlider.css">
+    <br>
+    <br>
+    <h1 style="color: white;display:flex;justify-content: center;align-items:center">Reseñas del juego</h1>
+    <div id="review-container">a
+      <div id="games-total" class="games-total">
+        <!-- <img src="Pulse-1s-200px (2).gif" alt="loading" /> -->
+        <div class="loader loader--style6" title="5" style="display:flex;justify-content: center;align-items:center">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+            <rect x="0" y="13" width="4" height="5" fill="#333">
+              <animate attributeName="height" attributeType="XML"
+                values="5;21;5" 
+                begin="0s" dur="0.6s" repeatCount="indefinite" />
+              <animate attributeName="y" attributeType="XML"
+                values="13; 5; 13"
+                begin="0s" dur="0.6s" repeatCount="indefinite" />
+            </rect>
+            <rect x="10" y="13" width="4" height="5" fill="#333">
+              <animate attributeName="height" attributeType="XML"
+                values="5;21;5" 
+                begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+              <animate attributeName="y" attributeType="XML"
+                values="13; 5; 13"
+                begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+            </rect>
+            <rect x="20" y="13" width="4" height="5" fill="#333">
+              <animate attributeName="height" attributeType="XML"
+                values="5;21;5" 
+                begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+              <animate attributeName="y" attributeType="XML"
+                values="13; 5; 13"
+                begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+            </rect>
+          </svg>
+        </div>
+      </div>
+    </div><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Otros scripts necesarios -->
+    <script src="js/gameSlider.js"></script>
+    
+
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/review.js"></script>
-  <script src="js/scriptRandom.js"></script>
-
-
 </body>
+
 </html>
