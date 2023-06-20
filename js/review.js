@@ -21,9 +21,10 @@ axios.request(options)
   .then(response => {
     const reviews = response.data.reviews;
     reviewContainer.innerHTML = '';
-    
+    //hacer un const que pase playtime_forever a horas
     if (reviews.length > 0) {
       reviews.forEach(review => {
+        const playtimeInHours = parseFloat((review.author.playtime_forever / 60).toFixed(1));
         const reviewElement = document.createElement('div');
         reviewElement.classList.add('review-item');
         if (review.voted_up) {
@@ -32,9 +33,10 @@ axios.request(options)
           reviewElement.classList.add('negative');
         }
         reviewElement.innerHTML = `
-        ${review.voted_up ? '<img src="icons/thumbsUpIcon.png" alt="Thumbs Up" height="30" width="30">' : '<img src="icons/thumbsDownIcon.png" alt="Thumbs Down" height="15" width="15">'}
+        ${review.voted_up ? '<img src="icons/thumbsUpIcon.png" alt="Thumbs Up" height="30" width="30">' : '<img src="icons/thumbsDownIcon.png" alt="Thumbs Down" height="30" width="30">'}
           <br>
           <p>Reseña: ${review.review}</p>
+          <p style="font-size:12px">Tiempo jugado: ${playtimeInHours}hrs</p>
           ${review.votes_up ? `<br><p>A ${review.votes_up} usuarios les pareció interesante</p>` : ''}
           ${review.votes_funny ? `<br><p>A ${review.votes_funny} usuarios les pareció divertido</p>` : ''}
         `;
